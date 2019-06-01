@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="content-language" content="pl"/>
+
+    <title>{% block title %}Customer Portal{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link href="{{ asset('build/layout.css') }}" rel="stylesheet"/>
+    {% endblock %}
+</head>
+
+<body>
+<div class="container-fluid sticky-top" id="header-container">
+    <div class="row">
+        <div class="col-12 text-left border-bottom">
+            <h1>Customer Portal</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="menu-content-container">
+    <div class="row justify-content-center mt-auto">
+        <div class="col-12 text-center w-100">
+            <table class="m-auto">
+                <tr>
+                    <td>
+                        {% block fos_user_content %}{% endblock fos_user_content %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+    <script src="{{ asset('build/manifest.js') }}"></script>
+    <script src="{{ asset('build/layout.js') }}"></script>
+{% endblock %}
+</body>
+</html>
