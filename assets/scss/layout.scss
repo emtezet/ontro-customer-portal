@@ -1,6 +1,11 @@
 /*CUSTOMIZE BOOTSTRAP VARIABLES*/
 $body-bg: #D9DBDA;
+$table-head-color: #4A7996;
 
 
 /*END CUSTOMIZE BOOTSTRAP VARIABLES*/
 @import "~bootstrap/scss/bootstrap";
+
+thead {
+  color: #4A7996;
+}

@@ -1,96 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="content-language" content="pl"/>
-        
-        <title>{% block title %}Customer Portal{% endblock %}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="content-language" content="pl"/>
 
-        {% block stylesheets %} 
-            <link href="{{ asset('build/layout.css') }}" rel="stylesheet"/>
-        {% endblock %}
-    </head>
+    <title>{% block title %}Customer Portal{% endblock %}</title>
 
-    <body class="">
-        <div class="container-fluid sticky-top" id="header-container">
-            <div class="row">
-                <div id="hamburger" class="w-auto col d-md-none mt-auto col-no-left-padding ">
-                    <button id="sidebarCollapse" type="button" class="fas fa-bars navbar-toggler collapsed " data-toggle="collapse" data-target="#menu" aria-controls="menu"></button>
-                </div>
+    {% block stylesheets %}
+        <link href="{{ asset('build/layout.css') }}" rel="stylesheet"/>
+    {% endblock %}
+</head>
 
-                <div class="col">
-                    <img alt="Intercam Logo" src="{{ asset('build/static/intercam-logo.png') }}" class="img-fluid float-left d-none d-md-block" />
-                    <img alt="Intercam Logo" src="{{ asset('build/static/intercam-logo-small.png') }}" class="img-fluid float-left d-md-none" />
-                </div>
-
-                <div id="header-buttons" class="col-auto d-none d-md-block">
-                    <div class="row">
-                        <div class="col-12 text-right">
-                            <a href="{{ path('change_language', {'lang': 'pl'}) }}"><i class="flag flag-pl d-inline-block"></i></a>
-                            <a href="{{ path('change_language', {'lang': 'en'}) }}"><i class="flag flag-en d-inline-block"></i></a>
-                            <a href="{{ path('change_language', {'lang': 'ua'}) }}"><i class="flag flag-ua d-inline-block"></i></a>
-                            <a href="{{ path('change_language', {'lang': 'ru'}) }}"><i class="flag flag-ru d-inline-block"></i></a>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-12">
-                            <div class="logout-bar rounded p-1 align-text-top">
-                                <span class="float-left">{{ 'header.logout-bar.hi'|trans }}, {{ app.user.email }}</span>
-                                <a href="{{ path('fos_user_security_logout') }}" class="text-dark"><span class="fas fa-sign-out-alt fa-3x float-right ml-3"></span></a>
-                                <a href="" class="text-dark"><span class="fas fa-envelope fa-3x float-right "></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="help-bar rounded p-1 align-text-top">
-                                <span class="float-left">{{ 'header.help-bar.info'|trans }}</span>
-                                <a href="" class="text-dark"><span class="far fa-question-circle fa-3x float-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="header-buttons" class="col-auto d-md-none">
-                    <div class="row">
-                        <div class="col-12 text-right">
-                            <a href="{{ path('change_language', {'lang': 'pl'}) }}"><i class="flag flag-pl d-inline-block"></i></a>
-                            <a href="{{ path('change_language', {'lang': 'en'}) }}"><i class="flag flag-en d-inline-block"></i></a>
-                            <a href="{{ path('change_language', {'lang': 'ua'}) }}"><i class="flag flag-ua d-inline-block"></i></a>
-                            <a href="{{ path('change_language', {'lang': 'ru'}) }}"><i class="flag flag-ru d-inline-block"></i></a>
-                        </div>
-                        <div class="col-12 text-right text-black-50">
-                            <a href="" class="text-dark"><i class="far fa-question-circle fa-2x"></i></a>
-                            <a href="" class="text-dark"><i class="fas fa-envelope fa-2x"></i></a>
-                            <a href="{{ path('fos_user_security_logout') }}" class="text-dark"><i class="fas fa-sign-out-alt fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body>
+<div class="container-fluid sticky-top" id="header-container">
+    <div class="row">
+        <div class="col-6 text-left border-bottom">
+            <h1>Customer Portal</h1>
         </div>
-
-        <div class="container-fluid" id="menu-content-container">
-            <div class="row">
-                <div id="menu" class="col collapse navbar-collapse d-none d-md-block pt-3 pb-3 ">
-                    {% include 'Menu/menu.html.twig' %}
-                </div>
-
-                <div class="col table-responsive pb-5" style="overflow-x: auto">
-                    {% block content %}{% endblock %}
-                </div>
-            </div>
+        <div class="col-6 text-right border-bottom">
+            <a href="{{ path('fos_user_security_logout') }}" class="btn btn-menu-1 bg-transparent m-0 p-0 border-0">Logout</a>
         </div>
+    </div>
+</div>
 
-        <div class="container-fluid fixed-bottom" id="footer-container">
-            <div class="row">
-                <div class="col-12 text-center">Copyright by Intercam Studios Poland Sp. z o.o. Sp. k.</div>
-            </div>
-        </div>
+<div class="container-fluid" id="menu-content-container">
+    <div class="row">
+        {% block content %}{% endblock %}
+    </div>
+</div>
 
-        {% block javascripts %}
-            <script src="{{ asset('build/manifest.js') }}"></script>
-            <script src="{{ asset('build/layout.js') }}"></script>
-        {% endblock %}
-    </body>
+{% block javascripts %}
+    <script src="{{ asset('build/manifest.js') }}"></script>
+    <script src="{{ asset('build/layout.js') }}"></script>
+{% endblock %}
+</body>
 </html>

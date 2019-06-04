@@ -14,8 +14,11 @@ class CustomerController extends AbstractController
      */
     public function index()
     {
+        $user = $this->getUser();
+
         return $this->render('Customer/details.html.twig', [
-            'controller_name' => 'CustomerController'
+            'controller_name' => 'CustomerController',
+            'user' => $user
         ]);
     }
 }

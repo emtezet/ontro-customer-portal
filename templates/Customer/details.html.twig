@@ -1,0 +1,61 @@
+{% extends 'layout_bootstrap.html.twig'%}
+
+{% block content %}
+    <div class="col-6 text-left mt-2">
+        <table class="table table-light table-sm table-borderless">
+            <thead class="table-info">
+                <tr>
+                    <th class="th p-2">Basic Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <form>
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-2 col-form-label text-right">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="email" placeholder="{{ user.email }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-2 col-form-label text-right">Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="name" placeholder="{{ user.name }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="address" class="col-sm-2 col-form-label text-right">Address</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="address" placeholder="{{ user.address }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="city" class="col-sm-2 col-form-label text-right">City</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="city" placeholder="{{ user.city }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="country" class="col-sm-2 col-form-label text-right">Country</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="country" placeholder="{{ user.country }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label text-right"></label>
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-secondary">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+    <div class="col-12 text-left"></div>
+    <div class="col-12 text-left"></div>
+{% endblock %}
