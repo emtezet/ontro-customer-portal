@@ -6,6 +6,10 @@ $table-head-color: #4A7996;
 /*END CUSTOMIZE BOOTSTRAP VARIABLES*/
 @import "~bootstrap/scss/bootstrap";
 
+.form-group {
+  width:100%;
+}
+
 thead {
   color: #4A7996;
 }

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<div class="container-fluid sticky-top" id="header-container">
+<div class="container-fluid " id="header-container">
     <div class="row">
         <div class="col-6 text-left border-bottom">
             <h1>Customer Portal</h1>
@@ -27,6 +27,29 @@
 <div class="container-fluid" id="menu-content-container">
     <div class="row">
         {% block content %}{% endblock %}
+    </div>
+</div>
+
+<div class="modal" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="info-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div id="info-modal-body" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="info-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal" role="document">
+        <div class="modal-content">
+            <div id="confirm-modal-body" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">{{ 'common.confirm_modal.no_btn'|trans }}</button>
+                <button id="confirm-modal-yes-btn" type="button" class="btn btn-success" data-dismiss="modal">{{ 'common.confirm_modal.yes_btn'|trans }}</button>
+            </div>
+        </div>
     </div>
 </div>
 
