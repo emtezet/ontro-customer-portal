@@ -48,7 +48,7 @@ class CustomerController extends AbstractController
         ]);
 
 
-        return $this->render('Customer/details.html.twig', [
+        return $this->render('Customer/page_details.html.twig', [
             'form' => $form->createView(),
             'user' => $user,
             'passengers' => $passengers,
@@ -57,7 +57,7 @@ class CustomerController extends AbstractController
     }
 
     /**
-     * @Route("/user/edit/{user_id}", name="action_ajax_user_edit")
+     * @Route("/action_ajax/user/edit/{user_id}", name="action_ajax_user_edit", methods={"POST"})
      */
     public function actionAjaxUserEdit(Request $request) {
 

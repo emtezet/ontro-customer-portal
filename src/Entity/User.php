@@ -31,7 +31,7 @@ class User extends BaseUser
      *
      * @var string $name
      *
-     * @ORM\Column(name="name", type="string", length=20)
+     * @ORM\Column(name="name", type="string", length=20, options={"default":"default name"})
      * @Assert\NotBlank(message="Name can't be empty!",groups={"edit"})
      * @Assert\Length(
      *      max = "20",
@@ -45,7 +45,7 @@ class User extends BaseUser
      *
      * @var string $address
      *
-     * @ORM\Column(name="address", type="string", length=20)
+     * @ORM\Column(name="address", type="string", length=20, options={"default":"default address"})
      * @Assert\NotBlank(message="Address can't be empty!",groups={"edit"})
      * @Assert\Length(
      *      max = "20",
@@ -59,7 +59,7 @@ class User extends BaseUser
      *
      * @var string $city
      *
-     * @ORM\Column(name="city", type="string", length=20)
+     * @ORM\Column(name="city", type="string", length=20, options={"default":"default city"})
      * @Assert\NotBlank(message="City can't be empty!",groups={"edit"})
      * @Assert\Length(
      *      max = "20",
@@ -73,7 +73,7 @@ class User extends BaseUser
      *
      * @var string $country
      *
-     * @ORM\Column(name="country", type="string", length=20)
+     * @ORM\Column(name="country", type="string", length=20, options={"default":"default countrys"})
      * @Assert\NotBlank(message="Country can't be empty!",groups={"edit"})
      * @Assert\Length(
      *      max = "20",
@@ -89,6 +89,10 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->name = 'default_name';
+        $this->address = 'default_address';
+        $this->city = 'default_city';
+        $this->country = 'default_country';
     }
 
     /**
@@ -102,7 +106,7 @@ class User extends BaseUser
     /**
      * @param int $id
      */
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -118,7 +122,7 @@ class User extends BaseUser
     /**
      * @param string $name
      */
-    public function setName(string $name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
@@ -134,7 +138,7 @@ class User extends BaseUser
     /**
      * @param string $country
      */
-    public function setCountry(string $country): void
+    public function setCountry(?string $country): void
     {
         $this->country = $country;
     }
@@ -150,7 +154,7 @@ class User extends BaseUser
     /**
      * @param string $address
      */
-    public function setAddress(string $address): void
+    public function setAddress(?string $address): void
     {
         $this->address = $address;
     }
@@ -166,7 +170,7 @@ class User extends BaseUser
     /**
      * @param string $city
      */
-    public function setCity(string $city): void
+    public function setCity(?string $city): void
     {
         $this->city = $city;
     }

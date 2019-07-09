@@ -22,6 +22,11 @@
             <a href="{{ path('fos_user_security_logout') }}" class="btn btn-menu-1 bg-transparent m-0 p-0 border-0">Logout</a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 text-left border-bottom">
+            {% block breadcrumbs %}{% endblock %}
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid" id="menu-content-container">
@@ -46,8 +51,8 @@
         <div class="modal-content">
             <div id="confirm-modal-body" class="modal-body"></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">{{ 'common.confirm_modal.no_btn'|trans }}</button>
-                <button id="confirm-modal-yes-btn" type="button" class="btn btn-success" data-dismiss="modal">{{ 'common.confirm_modal.yes_btn'|trans }}</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
+                <button id="confirm-modal-yes-btn" type="button" class="btn btn-success" data-dismiss="modal">YES</button>
             </div>
         </div>
     </div>

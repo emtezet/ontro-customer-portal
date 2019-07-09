@@ -1,5 +1,17 @@
 {% extends 'layout_bootstrap.html.twig'%}
 
+{% block breadcrumbs %}
+    <nav class="breadcrumb">
+        <a class="breadcrumb-item active" href="{{ path('homepage') }}">Home</a>
+    </nav>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/passenger.js') }}"></script>
+    <script src="{{ asset('build/trip.js') }}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="col-6 text-left mt-2">
         <table class="table table-light table-sm table-borderless">
@@ -65,9 +77,9 @@
                                 <td></td>
                                 <td></td>
                                 <td class="text-right">
-                                    <button onclick="actionAjaxNewPassenger(this)" type="button" class="btn btn-success btn-primary">
+                                    <a href="{{ path('passenger_page_add') }}" class="btn btn-success btn-primary">
                                         Add
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                             </tfoot>
@@ -123,9 +135,9 @@
                             <td></td>
                             <td></td>
                             <td class="text-right">
-                                <button onclick="actionAjaxNewTrip(this)" type="button" class="btn btn-success btn-primary">
+                                <a href="{{ path('trip_page_add') }}" class="btn btn-success btn-primary">
                                     Add
-                                </button>
+                                </a>
                             </td>
                         </tr>
                         </tfoot>

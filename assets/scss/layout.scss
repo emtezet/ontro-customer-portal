@@ -6,7 +6,7 @@ $table-head-color: #4A7996;
 /*END CUSTOMIZE BOOTSTRAP VARIABLES*/
 @import "~bootstrap/scss/bootstrap";
 
-.form-group {
+.form-group, fieldset {
   width:100%;
 }
 
