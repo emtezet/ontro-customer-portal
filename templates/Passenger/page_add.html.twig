@@ -1,0 +1,37 @@
+{% extends 'layout_bootstrap.html.twig'%}
+
+{% block breadcrumbs %}
+    <nav class="breadcrumb">
+        <a class="breadcrumb-item" href="{{ path('homepage') }}">Home</a>
+        <a class="breadcrumb-item active" href="{{ path('passenger_page_add') }}">Passenger add</a>
+    </nav>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/passenger.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="col-6 text-left mt-2">
+        <table class="table table-light table-sm table-borderless">
+            <thead class="table-info">
+                <tr>
+                    <th class="th p-2">Add passenger</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-12">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <button onclick="actionAjaxPassengerAdd(this)" type="button" class="btn btn-warning btn-primary">Save</button>
+                        {{ form_end(form) }}
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+{% endblock %}

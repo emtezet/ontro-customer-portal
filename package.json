@@ -1,0 +1,24 @@
+{
+    "devDependencies": {
+        "@fortawesome/fontawesome-free": "^5.9.0",
+        "@symfony/webpack-encore": "^0.27.0",
+        "copy-webpack-plugin": "^5.0.3",
+        "core-js": "^3.0.0",
+        "node-sass": "^4.12.0",
+        "popper.js": "^1.15.0",
+        "sass-loader": "^7.0.1",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev": "encore dev",
+        "dev-watch": "encore dev --watch",
+        "prod": "encore production",
+        "prod-watch": "encore production --watch"
+    },
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "jquery": "^3.4.1"
+    }
+}
